@@ -39,4 +39,14 @@ public class AndroidFunctions : MonoBehaviour {
             toastInstance.Call("show");
         }));
     }
+
+    public void ShowStaticHelloWorldLog()
+    {
+        // Get java class from my plugin
+        AndroidJavaClass androidLibraryUtility =
+            new AndroidJavaClass("com.saharat.utilitybridge.UtilityBridgeMain");
+
+        // Call static function
+        androidLibraryUtility.CallStatic("HelloWorld");
+    }
 }
