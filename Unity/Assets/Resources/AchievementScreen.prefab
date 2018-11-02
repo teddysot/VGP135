@@ -109,10 +109,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1228923973320544}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 666e6c84f25a4d74eba54e78e6124048, type: 3}
+  m_Script: {fileID: 11500000, guid: cfc2147fb93267248a1aa7aa89143941, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backButton: {fileID: 114984449885276664}
+  from: 0
+  to: 1
+  duration: 0.3
+  loop: 0
+  resetOnEnable: 1
 --- !u!114 &114095622295014480
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -249,14 +253,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1228923973320544}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53989ac80311c94478c160db0927e667, type: 3}
+  m_Script: {fileID: 11500000, guid: 47d14fed0ecd55945a43b029337c0ae6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  from: 0
-  to: 1
-  duration: 0.3
-  loop: 0
-  resetOnEnable: 1
+  backButton: {fileID: 114984449885276664}
 --- !u!114 &114754435925034328
 MonoBehaviour:
   m_ObjectHideFlags: 1

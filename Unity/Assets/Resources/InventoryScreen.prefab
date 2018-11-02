@@ -120,7 +120,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: e59802fd3f02acc489972560619ef41b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 63716b6a1069d304bb109f8db9e96b2a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -280,10 +280,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1735177694314230}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b184ffff8c09fc45acff85c0b4bcf63, type: 3}
+  m_Script: {fileID: 11500000, guid: cfc2147fb93267248a1aa7aa89143941, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backButton: {fileID: 114390749961669710}
+  from: 0
+  to: 1
+  duration: 0.3
+  loop: 0
+  resetOnEnable: 1
 --- !u!114 &114765590763047138
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -313,14 +317,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1735177694314230}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53989ac80311c94478c160db0927e667, type: 3}
+  m_Script: {fileID: 11500000, guid: 93f3d4c84a2bb9a458e24a2281a6841e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  from: 0
-  to: 1
-  duration: 0.3
-  loop: 0
-  resetOnEnable: 1
+  backButton: {fileID: 114390749961669710}
 --- !u!222 &222042479036168420
 CanvasRenderer:
   m_ObjectHideFlags: 1

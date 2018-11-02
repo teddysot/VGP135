@@ -170,8 +170,8 @@ GameObject:
   - component: {fileID: 224081223582164118}
   - component: {fileID: 222410653533793398}
   - component: {fileID: 114841228429739658}
-  - component: {fileID: 114984794602664734}
-  - component: {fileID: 225366600457761162}
+  - component: {fileID: 114299017645346432}
+  - component: {fileID: 225834104286995386}
   m_Layer: 5
   m_Name: SettingsScreen
   m_TagString: Untagged
@@ -256,6 +256,18 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114299017645346432
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1775950010762836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34380a007fe0a9f45b4850cf940cc546, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backButton: {fileID: 114842770342947136}
 --- !u!114 &114525925764542644
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -277,10 +289,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 25
+    m_FontSize: 31
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
+    m_MinSize: 10
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -288,9 +300,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'BACK
-
-'
+  m_Text: Back
 --- !u!114 &114544667781721702
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -428,10 +438,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1775950010762836}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5554667c0d4cad47a63ab2034ca32d6, type: 3}
+  m_Script: {fileID: 11500000, guid: cfc2147fb93267248a1aa7aa89143941, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backButton: {fileID: 114842770342947136}
+  from: 0
+  to: 1
+  duration: 0.3
+  loop: 0
+  resetOnEnable: 1
 --- !u!114 &114842770342947136
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -470,7 +484,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114742163700769228}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114841228429739658}
+        m_MethodName: CloseScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114911804641977972
@@ -500,22 +525,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114984794602664734
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1775950010762836}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53989ac80311c94478c160db0927e667, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  from: 0
-  to: 1
-  duration: 0.3
-  loop: 0
-  resetOnEnable: 1
 --- !u!222 &222036811503906074
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -721,8 +730,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 104, y: -50}
-  m_SizeDelta: {x: 129.6, y: 47.9}
+  m_AnchoredPosition: {x: 75.8, y: -41.9}
+  m_SizeDelta: {x: 129.6, y: 67.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224691023438512014
 RectTransform:
@@ -780,7 +789,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!225 &225366600457761162
+--- !u!225 &225834104286995386
 CanvasGroup:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}

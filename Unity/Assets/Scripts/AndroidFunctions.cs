@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AndroidFunctions : MonoBehaviour {
+public class AndroidFunctions : MonoBehaviour
+{
 
-	// Use this for initialization
-	public void ShowToastMessage(string message)
+    // Use this for initialization
+    public void ShowToastMessage(string message)
     {
         // Grab Unity Class
         AndroidJavaClass unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
@@ -14,7 +15,7 @@ public class AndroidFunctions : MonoBehaviour {
         AndroidJavaObject unityActivity = unityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
 
         // Call Android system popup or ui thread
-        unityActivity.Call("runOnUiThread", new AndroidJavaRunnable(()=>
+        unityActivity.Call("runOnUiThread", new AndroidJavaRunnable(() =>
         {
             Debug.Log("Running on UI thread");
             // Get application context for activity

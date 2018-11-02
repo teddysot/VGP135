@@ -150,14 +150,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1961891804644838}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53989ac80311c94478c160db0927e667, type: 3}
+  m_Script: {fileID: 11500000, guid: b5ec38563e5699047841ad51f025aa12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  from: 0
-  to: 1
-  duration: 0.3
-  loop: 0
-  resetOnEnable: 1
+  backButton: {fileID: 114021129558274290}
+  facebookButton: {fileID: 114629562856941780}
 --- !u!114 &114094292745137714
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -193,11 +190,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1961891804644838}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c659fb9572f6c54cb7282ad0b892f7b, type: 3}
+  m_Script: {fileID: 11500000, guid: cfc2147fb93267248a1aa7aa89143941, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backButton: {fileID: 114021129558274290}
-  facebookButton: {fileID: 114629562856941780}
+  from: 0
+  to: 1
+  duration: 0.3
+  loop: 0
+  resetOnEnable: 1
 --- !u!114 &114352183468214730
 MonoBehaviour:
   m_ObjectHideFlags: 1
