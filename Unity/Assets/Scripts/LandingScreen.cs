@@ -18,12 +18,16 @@ public class LandingScreen : MonoBehaviour
     [SerializeField]
     private Button achievementGameButton;
 
+    [SerializeField]
+    private Button inventoryGameButton;
+
     private void Start()
     {
         startGameButton.onClick.AddListener(StartButtonClickedCallback);
         settingGameButton.onClick.AddListener(OpenSettingsScreen);
         contactGameButton.onClick.AddListener(OpenContactScreen);
         achievementGameButton.onClick.AddListener(OpenAchievementScreen);
+        inventoryGameButton.onClick.AddListener(OpenInventoryScreen);
     }
 
     private void OnDestroy()
@@ -32,6 +36,7 @@ public class LandingScreen : MonoBehaviour
         settingGameButton.onClick.RemoveListener(OpenSettingsScreen);
         contactGameButton.onClick.RemoveListener(OpenContactScreen);
         achievementGameButton.onClick.RemoveListener(OpenAchievementScreen);
+        inventoryGameButton.onClick.RemoveListener(OpenInventoryScreen);
     }
 
     private void StartButtonClickedCallback()
@@ -51,6 +56,11 @@ public class LandingScreen : MonoBehaviour
 
     private void OpenAchievementScreen()
     {
-        ScreenManager.Instance().PushScreen("SettingsScreen");
+        ScreenManager.Instance().PushScreen("AchievementScreen");
+    }
+
+    private void OpenInventoryScreen()
+    {
+        ScreenManager.Instance().PushScreen("InventoryScreen");
     }
 }
