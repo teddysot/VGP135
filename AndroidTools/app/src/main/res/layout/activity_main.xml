@@ -24,25 +24,32 @@
             android:id="@+id/helloWorldButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Debug Log Hello WOrld" />
+            android:text="@string/hello_world_button" />
 
         <Button
             android:id="@+id/showToastButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Show Toast" />
+            android:text="@string/show_toast_button" />
 
         <Button
             android:id="@+id/showNotificationButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="SHOW NOTIFICATION" />
+            android:text="@string/show_notification_button" />
 
         <Button
             android:id="@+id/showDelayedNotificationButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="SHOW DELAYED NOTIFICATION" />
+            android:text="@string/show_delayed_notification_button" />
+
+        <Button
+            android:id="@+id/showPermissionButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="OnPermissionRequestButtonClicked"
+            android:text="@string/show_permission_button" />
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

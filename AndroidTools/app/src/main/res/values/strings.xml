@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">AndroidTools</string>
+    <string name="hello_world_button">LOG HELLO WORLD</string>
+    <string name="show_toast_button">SHOW TOAST</string>
+    <string name="show_notification_button">SHOW NOTIFICATION</string>
+    <string name="show_delayed_notification_button">SHOW DELAYED NOTIFICATION</string>
+    <string name="show_permission_button">SHOW PERMISSION</string>
 </resources>

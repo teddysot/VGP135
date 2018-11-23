@@ -32,36 +32,85 @@ public class AndroidFunctions : MonoBehaviour {
 
 
 
-    public void ShowToastMessage(string message)
+    public void Start()
     {
         AndroidJavaClass unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
 
         AndroidJavaObject unityActivity = unityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
 
-        unityActivity.Call("runOnUiThread",new AndroidJavaRunnable(()=> {
-            Debug.Log("Running on UI thread");
+        AndroidJavaObject applicationContext = unityActivity.Call<AndroidJavaObject>("getApplicationContext");
 
-            AndroidJavaObject applicationContext = unityActivity.Call<AndroidJavaObject>("getApplicationContext");
+        AndroidJavaClass androidLibraryUtility = new AndroidJavaClass("com.nluu.tools.Utility");
 
-            AndroidJavaClass toastClass = new AndroidJavaClass("android.widget.Toast");
+        AndroidJavaObject utilityPlugin =
+            androidLibraryUtility.CallStatic<AndroidJavaObject>("Create", unityActivity, applicationContext);
 
-            AndroidJavaObject javaString = new AndroidJavaObject("java.lang.String",message);
-
-            AndroidJavaObject toastInstance = toastClass.CallStatic<AndroidJavaObject>("makeText",applicationContext,message,toastClass.GetStatic<int>("LENGTH_SHORT"));
-
-            toastInstance.Call("show");
-        }));
+        utilityPlugin.CallStatic("ShowToastMessage", "My Toast");
     }
 
     public void ShowStaticHelloWorldLog()
     {
         // Get java class from my plugin
         AndroidJavaClass androidLibraryUtility = 
-            new AndroidJavaClass("com.nluu.utilitybridge.UtilityBridgeMain");
+            new AndroidJavaClass("com.nluu.tools.Utility");
 
         // Call static function
-        androidLibraryUtility.CallStatic("HelloWorld");
+        androidLibraryUtility.CallStatic("HelloWorldStatic");
     }
-	
-		
+
+    public void ShowNotification()
+    {
+        AndroidJavaClass unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
+
+        AndroidJavaObject unityActivity = unityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
+
+        AndroidJavaObject applicationContext = unityActivity.Call<AndroidJavaObject>("getApplicationContext");
+
+        AndroidJavaClass androidLibraryUtility = new AndroidJavaClass("com.nluu.tools.Utility");
+
+        AndroidJavaObject utilityPlugin =
+            androidLibraryUtility.CallStatic<AndroidJavaObject>("Create", unityActivity, applicationContext);
+
+       
+        // Call static function
+        utilityPlugin.Call("ShowNotification","Message", 0);
+    }
+
+    public void ShowDelayedNotification()
+    {
+        AndroidJavaClass unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
+
+        AndroidJavaObject unityActivity = unityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
+
+        AndroidJavaObject applicationContext = unityActivity.Call<AndroidJavaObject>("getApplicationContext");
+
+        AndroidJavaClass androidLibraryUtility = new AndroidJavaClass("com.nluu.tools.Utility");
+
+        AndroidJavaObject utilityPlugin =
+            androidLibraryUtility.CallStatic<AndroidJavaObject>("Create", unityActivity, applicationContext);
+
+        // Call static function
+        utilityPlugin.Call("ShowNotification", "Message", 1000);
+    }
+
+    public void ShowToastMessage(string message)
+    {
+        AndroidJavaClass unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
+
+        AndroidJavaObject unityActivity = unityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
+
+        unityActivity.Call("runOnUiThread", new AndroidJavaRunnable(() => {
+            Debug.Log("Running on UI thread");
+
+            AndroidJavaObject applicationContext = unityActivity.Call<AndroidJavaObject>("getApplicationContext");
+
+            AndroidJavaClass toastClass = new AndroidJavaClass("android.widget.Toast");
+
+            AndroidJavaObject javaString = new AndroidJavaObject("java.lang.String", message);
+
+            AndroidJavaObject toastInstance = toastClass.CallStatic<AndroidJavaObject>("makeText", applicationContext, message, toastClass.GetStatic<int>("LENGTH_SHORT"));
+
+            toastInstance.Call("show");
+        }));
+    }
 }

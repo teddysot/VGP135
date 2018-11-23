@@ -19,8 +19,8 @@
 
         <receiver android:name="com.nluu.tools.Utility"/>
     </application>
-    <uses-permission android:name="android.permission.VIBRATE"/> <!-- Use to Vibrate phone -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/> <!-- Use to store files on phone -->
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/> <!-- Used to get device id -->
     <uses-permission android:name="android.permission.WRITE_CONTACTS"/> <!-- Used to get device id -->
+    <uses-permission android:name="android.permission.READ_CONTACTS"/> <!-- Used to get device id -->
 </manifest>
