@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class SettingsScreen : MonoBehaviour {
+
+    public AudioMixer audioMixer;
 
     [SerializeField]
     private Button backButton;
@@ -21,5 +24,15 @@ public class SettingsScreen : MonoBehaviour {
     private void CloseScreen()
     {
         ScreenManager.Instance().PopScreen();
+    }
+
+    public void SetVolume(float volume)
+    {
+        audioMixer.SetFloat("Volume", volume);
+    }
+
+    public void SetQuality(int qualityIndex)
+    {
+        QualitySettings.SetQualityLevel(qualityIndex);
     }
 }
